@@ -5,17 +5,17 @@ import 'package:streaming_app/utilities/colors.dart';
 import 'constants.dart';
 
 final kHeading5 = GoogleFonts.poppins(
-  color: secodaryColor,
+  color: secondaryColor,
   fontSize: 30,
   fontWeight: semibold,
 );
 final kHeading6 = GoogleFonts.poppins(
-  color: secodaryColor,
+  color: secondaryColor,
   fontSize: 20,
   fontWeight: semibold,
 );
 final kTitle = GoogleFonts.poppins(
-  color: secodaryColor,
+  color: secondaryColor,
   fontSize: 16,
   fontWeight: bold,
 );
