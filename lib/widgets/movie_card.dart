@@ -23,8 +23,8 @@ class MovieCard extends StatelessWidget {
         DetailPage.routeName,
       ),
       child: Container(
-        margin: EdgeInsets.only(
-          left: defaultMargin,
+        margin: EdgeInsets.symmetric(
+          horizontal: defaultMargin / 2,
         ),
         width: 120,
         child: Column(

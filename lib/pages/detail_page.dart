@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:streaming_app/utilities/colors.dart';
+import 'package:streaming_app/widgets/cast_cart.dart';
 
 import '../utilities/constants.dart';
 import '../utilities/text_style.dart';
@@ -34,11 +35,36 @@ class DetailPage extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(defaultMargin),
+            child: CircleAvatar(
+              backgroundColor: primaryColor,
+              child: IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(
+                  Icons.arrow_back_ios_new,
+                  color: secondaryColor,
+                ),
+              ),
+            ),
+          ),
         ],
       );
     }
 
     Widget _content() {
+      final castList = [
+        const CastCard(
+          image: 'images/cast_image1.png',
+          name: 'Henry Cavill',
+          role: 'Geralt',
+        ),
+        const CastCard(
+          image: 'images/cast_image2.png',
+          name: 'Freeya Alan',
+          role: 'Ciri',
+        ),
+      ];
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -120,6 +146,17 @@ class DetailPage extends StatelessWidget {
             child: Text(
               'Cast',
               style: kHeading6,
+            ),
+          ),
+          SizedBox(
+            height: 90,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(
+                horizontal: defaultMargin / 2,
+              ),
+              physics: const BouncingScrollPhysics(),
+              children: castList.map((cast) => cast).toList(),
             ),
           ),
         ],

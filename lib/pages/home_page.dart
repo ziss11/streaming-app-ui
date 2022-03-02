@@ -115,8 +115,8 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.only(
-                  right: defaultMargin,
+                padding: EdgeInsets.symmetric(
+                  horizontal: defaultMargin / 2,
                 ),
                 children: movieList
                     .map(
