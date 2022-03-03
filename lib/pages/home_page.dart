@@ -24,13 +24,10 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Image.asset(
-                      'images/menu_icon.png',
-                      width: 18,
-                      height: 14,
-                    ),
+                  Image.asset(
+                    'images/menu_icon.png',
+                    width: 18,
+                    height: 14,
                   ),
                   Image.asset(
                     'images/profile_image.png',
@@ -132,30 +129,27 @@ class HomePage extends StatelessWidget {
 
     Widget _bottomNavBar() {
       Widget _navBarIcon(String icon, String label, Color color) {
-        return GestureDetector(
-          onTap: () {},
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                icon,
-                width: 17,
-                height: 20,
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              icon,
+              width: 17,
+              height: 20,
+              color: color,
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              label,
+              style: kSubtitle.copyWith(
+                fontWeight: semibold,
+                fontSize: 10,
                 color: color,
               ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                label,
-                style: kSubtitle.copyWith(
-                  fontWeight: semibold,
-                  fontSize: 10,
-                  color: color,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         );
       }
 
